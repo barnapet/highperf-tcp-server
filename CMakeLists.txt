@@ -15,9 +15,9 @@ add_executable(tcp_server ${SERVER_SOURCES})
 target_compile_options(tcp_server PRIVATE
     -Wall
     -Wextra
+    $<$<CONFIG:Release>:-O2>
+    $<$<CONFIG:Debug>:-O0>
 )
-
-target_compile_options(tcp_server $<$<CONFIG:Release>:-O2> $<$<CONFIG:Debug>:-O0> )
 
 target_link_libraries(tcp_server PRIVATE pthread)
 
