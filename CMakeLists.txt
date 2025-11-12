@@ -10,7 +10,11 @@ set(SERVER_SOURCES
     src/epoll_wrapper.cpp
 )
 
-add_executable(tcp_server ${SERVER_SOURCES})
+add_executable(tcp_server
+    src/main.cpp
+    src/server.cpp
+    src/epoll_wrapper.cpp
+)
 
 target_compile_options(tcp_server PRIVATE
     -Wall
